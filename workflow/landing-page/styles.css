@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navigation, .services, p, h3, h4, .navbar {
+    font-family: 'Roboto';
+}
+
+body {
+    background-color: #efefef;
+}
+
+#pic-text h2,
+#pic-text p,
+#pic-text a {
+    color: white;
+    margin: 20px;
+    font: 400 14px 'Roboto';
+}
+
+#pic-text h2 {
+    color: white;
+    margin: 20px;
+    font-family:'Roboto';
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+#header {
+    padding: 43px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    font-size: 0.9em;
+}
+
+.icons {
+    margin-left: 55px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #d0d0d0;
+    margin: 0.2em;
+    padding-top: 5px;
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+.heading {
+    text-transform: uppercase;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
+    font-size: 0.9em;
+}
+
+.navigation {
+    display: flex;
+    margin: 40px;
+}
+
+.navigation a:hover {
+    color: orange;
+}
+
+.main-img {
+    background-image: url(images/main-background-img.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position-y: 85%;
+    padding-left: 170px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.main-img p {
+    font: 400 14px 'Roboto';
+}
+
+.h3 {
+    margin: 70px 150px;
+}
+
+.boxes {
+    display: grid;
+}
+
+.boxes .box {
+    background-color: white;
+    position: relative;
+    width: 555px;
+    padding: 25px;
+    margin-bottom: 30px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+}
+
+.animation {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.item a:hover {
+    color: orange;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.add-on {
+    margin: 80px;
+}
+
+section .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: white;
+    position: relative;
+    margin: 10px;
+    width: 362px;
+    height: auto;
+}
+
+.item p,
+.item h4 {
+    padding: 15px;
+}
+
+.item p {
+    font-size: 0.87em;
+    color: #778899;
+    line-height: 1.5em;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: chartreuse;
+}
+
+.blue {
+    color: dodgerblue;
+}
+
+.footer {
+    margin: 80px 150px;
+}
+
+#form {
+    background-color: white;
+    padding: 40px;
+    margin: 150px;
+}
