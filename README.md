@@ -20,9 +20,9 @@ So, if you're ready to work hard, go to [Getting Started](./materials/getting_st
 ## Progress
 
 - [x] [Info](#frontend-lab)
-- [ ] [Getting Started](./materials/getting_started.md)
-- [ ] [Landing Page](./materials/landing_page.md)
-- [ ] [Landing Page - Working With Third-Party Services](./materials/landing_page_with_data.md)
+- [x] [Getting Started](./materials/getting_started.md)
+- [x] [Landing Page](./materials/landing_page.md)
+- [x] [Landing Page - Working With Third-Party Services](./materials/landing_page_with_data.md)
 - [ ] [Javascript - Custom Moment.js](./materials/js/custom-moment-js.md)
 - [ ] [Javascript - Cacher](./materials/js/cacher.md)
 - [ ] [Javascript - Tabs](./materials/js/tabs.md)
