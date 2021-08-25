@@ -7,13 +7,12 @@ class Cacher {
     }
     withCache(fn) {
         return number => {
-            const key = number.toString();
-            const value = this.cacheResult[key];
+            const value = this.cacheResult[number];
             if (value) {
                 return `${value} (from cache)`;
             } else {
-                const result = fn(number);
-                this.cacheResult[key] = result;
+                let result = fn(math.bignumber(number));
+                this.cacheResult[number] = result;
                 return result;
             }
         }
@@ -21,7 +20,7 @@ class Cacher {
 }
 
 const showResult = () => {
-    const inputValue = +input.value;
+    const inputValue = input.value;
     if (!inputValue) {
         resultBlock.textContent = 'Enter number';
         return false
