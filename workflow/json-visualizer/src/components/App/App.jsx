@@ -11,14 +11,16 @@ function App() {
         const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${Math.floor(Math.random()*100)}`);
         let result = await response.json();
         setJson(JSON.stringify(result));
+        console.log(json)
     };
 
-    function recursion(jsonText) {
+    function recursion (jsonText) {
         for (const key in jsonText) {
             if (Object.hasOwnProperty.call(jsonText, key)) {
                 const element = jsonText[key];
                 if (typeof element == 'object') {
-                    recursion(element);
+                    console.log(element)
+                    // recursion(element);
                 };
             };
         };
@@ -29,8 +31,8 @@ function App() {
             <div className="container">
                 <Field title="JSON String" content={json} />
             <div className="button-container">
-                <Button title="Загрузить JSON" onClick={getJSON} />
-                <Button title="Визуализировать JSON" onClick={recursion} />
+                <Button title="Загрузить JSON" action={getJSON} />
+                <Button title="Визуализировать JSON" action={recursion} />
             </div>
                 <Field title="JSON Tree"/> 
             </div>
