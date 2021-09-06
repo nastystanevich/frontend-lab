@@ -5,36 +5,39 @@ import Field from '../Field/Field.jsx';
 
 function App() {
 
-    const [json, setJson] = useState('Необходимо загрузить JSON');
+    const [notVisualizedjson, inputJson] = useState('');
+    const [visualizedJson, outputJson] = useState();
+
+    let json = null;
 
     async function getJSON() {
         const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${Math.floor(Math.random()*100)}`);
-        let result = await response.json();
-        setJson(JSON.stringify(result));
-        console.log(json)
+        json = await response.json();
+        inputJson(JSON.stringify(json));
     };
 
-    function recursion (jsonText) {
-        for (const key in jsonText) {
-            if (Object.hasOwnProperty.call(jsonText, key)) {
-                const element = jsonText[key];
-                if (typeof element == 'object') {
-                    console.log(element)
-                    // recursion(element);
-                };
+    function visualizeJSON(obj) {
+        for (const element in obj) {
+            if (typeof obj[element] === 'object' && obj[element] != null) {
+                console.log(obj[element], true)
+                visualizeJSON(obj[element]);
+            } else {
+                console.log(obj[element], false)
             };
         };
-    }; 
+        outputJson();
+    };
+
 
     return (
         <div className="App">
             <div className="container">
-                <Field title="JSON String" content={json} />
+                <Field title="JSON String" content={notVisualizedjson} />
             <div className="button-container">
-                <Button title="Загрузить JSON" action={getJSON} />
-                <Button title="Визуализировать JSON" action={recursion} />
+                <Button title="Download JSON" onClick={getJSON} />
+                <Button title="Visualize JSON" onClick={visualizeJSON}/>
             </div>
-                <Field title="JSON Tree"/> 
+                <Field title="JSON Tree" content={visualizedJson}/> 
             </div>
         </div>
     );
