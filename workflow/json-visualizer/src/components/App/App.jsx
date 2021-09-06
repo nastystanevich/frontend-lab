@@ -8,34 +8,33 @@ function App() {
     const [notVisualizedjson, inputJson] = useState('');
     const [visualizedJson, outputJson] = useState();
 
-    let json = null;
-
     async function getJSON() {
         const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${Math.floor(Math.random()*100)}`);
-        json = await response.json();
-        inputJson(JSON.stringify(json));
+        let result = await response.json();
+        inputJson(JSON.stringify(result));
     };
 
     function visualizeJSON(obj) {
-        for (const element in obj) {
-            if (typeof obj[element] === 'object' && obj[element] != null) {
-                console.log(obj[element], true)
-                visualizeJSON(obj[element]);
-            } else {
-                console.log(obj[element], false)
+        let output = null;
+        if (typeof obj === 'object' && obj != null) { 
+            for (let element in obj) {
+                if (typeof obj[element] === 'object' && obj[element] != null) {
+                    visualizeJSON(obj[element])
+                };
             };
+        } else {
+            console.log('Not a JSON');
         };
-        outputJson();
+        outputJson(output);
     };
-
 
     return (
         <div className="App">
             <div className="container">
                 <Field title="JSON String" content={notVisualizedjson} />
             <div className="button-container">
-                <Button title="Download JSON" onClick={getJSON} />
-                <Button title="Visualize JSON" onClick={visualizeJSON}/>
+                <Button title="Download JSON" onClick={ getJSON } />
+                <Button title="Visualize JSON" onClick={ () => visualizeJSON() }/>
             </div>
                 <Field title="JSON Tree" content={visualizedJson}/> 
             </div>
