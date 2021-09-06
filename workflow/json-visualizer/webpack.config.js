@@ -15,8 +15,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            name: 'index.html',
-            inject: false,
+            // name: 'index.html',
+            // inject: false,
             template: path.resolve(__dirname, 'public/index.html'),
         }),
         // new CopyWebpackPlugin(),
@@ -26,7 +26,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
@@ -40,7 +40,7 @@ module.exports = {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
                     },
@@ -50,7 +50,7 @@ module.exports = {
                 test: /\.m?jsx$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react'],
                     },
