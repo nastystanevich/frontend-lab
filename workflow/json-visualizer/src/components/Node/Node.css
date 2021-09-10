@@ -3,25 +3,25 @@ ul {
 }
 li {
     list-style-type: none;
-}
-li+li {
-    list-style-type: none;
     padding-left: 30px;
 }
 
 
-.arr::before, .obj::before {
+/* .arr::before, .obj::before {
     content: '\25B6';
     font-size: 10px;
-}
+} */
 
-.arr::after {
-    content: '[] ';
+.arr::before {
+    content: '[]';
     font-weight: 900;
-    margin-left: 10px;
+    margin-right: 10px;
 }
-.obj::after {
+.obj::before {
     content: '{}';
     font-weight: 900;
-    margin-left: 10px;
+    margin-right: 10px;
+}
+.hidden {
+    display: none;
 }

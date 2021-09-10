@@ -17,7 +17,9 @@ function Node( { obj, nodeKey } ) {
         return color;
     };
 
-    function openAndClose() {};
+    function openAndClose(EO) {
+        EO.target.nextElementSibling.classList.toggle('hidden');
+    };
 
     function addType() {
         let type = null;
@@ -32,11 +34,16 @@ function Node( { obj, nodeKey } ) {
     };
 
 
+    // return (
+    //     typeof obj === 'object' && obj != null 
+    //     ? <div><ul className="key" className={`list ${addType()}`} onClick={openAndClose}>{nodeKey}:</ul> {Object.entries(obj).map(([key, value]) => <li className="list-item"><Node key={JSON.stringify(value)} obj={value} nodeKey={key} /></li> )}</div>
+    //     : <span className="str"><span className="key">{nodeKey}: </span> <span className="value" style={ {color: `${setColor()}`} }>{obj}</span></span>   
+    // )
+
     return (
         typeof obj === 'object' && obj != null 
-        ? <ul><ul className="key" className={`list ${addType()}`} onClick={openAndClose}>{nodeKey}:</ul> {Object.entries(obj).map(([key, value]) => <li className="list-item"><Node key={JSON.stringify(value)} obj={value} nodeKey={key} /></li> )}</ul>
-        : <span className="str"><span className="key">{nodeKey}: </span> <span className="value" style={ {color: `${setColor()}`} }>{obj}</span></span>
-        
+        ? <ul className="list"><p className={`${addType()}`} onClick={openAndClose}>{nodeKey}:</p> <ul className="openAndClose">{Object.entries(obj).map(([key, value]) => <li className="list-item"><Node key={JSON.stringify(value)} obj={value} nodeKey={key} /></li> )}</ul></ul>
+        : <span className="str"><span className="key">{nodeKey}: </span> <span className="value" style={ {color: `${setColor()}`} }>{obj}</span></span>   
     )
 };
 
