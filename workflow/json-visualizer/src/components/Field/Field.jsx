@@ -1,11 +1,14 @@
 import React from 'react';
 import './Field.css';
+import Node from '../Node/Node.jsx';
 
-function Field(props) {
+function Field( {title, content, obj} ) {
     return (
         <div className="Field">
-            <div className="field-header">{props.title}</div>
-            <div className="field-body">{props.content}</div>
+            <div className="field-header">{title}</div>
+            <div className="field-body">{content}
+                <Node obj={obj} nodeKey={'parsed Json'}/>
+            </div>
         </div>
     );
 };
