@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Roboto Slab -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/24bd1027be.js" crossorigin="anonymous"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./utils/dropdown-menu/dropdown-menu.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1 class="logo__title">
+                <span>ART</span> CORE
+            </h1>
+        </div>
+        <div class="icon-btn-group icon-btn-group_social">
+            <div class="icon-btn"><i class="fab fa-facebook-f"></i></div>
+            <div class="icon-btn"><i class="fab fa-twitter"></i></div>
+            <div class="icon-btn"><i class="fab fa-linkedin-in"></i></div>
+            <div class="icon-btn"><i class="fas fa-wifi"></i></div>
+        </div>
+    </header>
+    <div class="navigation">
+        <div class="icon-btn-group icon-btn-group_navigation">
+            <div class="icon-btn"><i class="fas fa-search"></i></div>
+            <div class="icon-btn"><i class="fas fa-chevron-left"></i></div>
+            <div class="icon-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <nav class="breadcrumb">
+            <ul>
+                <li class="breadcrumb__item breadcrumb__item_active"><a href="#">home</a></li>
+                <li class="breadcrumb__item"><a href="#">services</a></li>
+                <li class="breadcrumb__item"><a href="#" id="dropdown-projects">projects</a></li>
+                <li class="breadcrumb__item"><a href="#" id="dropdown-blog">blog</a></li>
+                <li class="breadcrumb__item"><a href="#" id="dropdown-pages">pages</a></li>
+                <li class="breadcrumb__item"><a href="#">contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger-button" id="burger-button">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+    <nav class="mobile-navigation" style="display: none" id="mobile-navigation">
+        <ul>
+<!--            <li class="mobile-navigation__item"><a href="#">Home</a></li>-->
+            <li class="mobile-navigation__item">
+                <a href="#">Home</a>
+                <ul class="mobile-navigation__submenu">
+                    <li class="mobile-navigation__subitem">
+                        <a href="#">Sub Home</a>
+                    </li>
+                    <li class="mobile-navigation__subitem">
+                        <a href="#">Sub Home 2</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="promo">
+        <h2 class="promo__title">I <i class="fas fa-heart"></i> FRONTEND</h2>
+        <p class="promo__subtitle">Some lorem ipsum text</p>
+        <p class="promo__credits">Credit goes to <a href="https://unsplash.com">Unsplash</a> for photos.</p>
+    </div>
+    <section class="services">
+        <h3 class="section-title section-title_services">our services</h3>
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="service-card__content">
+                    <h4 class="service-card__title">Quality Matter With Us</h4>
+                    <div class="service-card__meta">Artcore is free HTML5 template by template mo. Credit goes to Unsplash for photos used in this template. You can use this layout for your personal or commercial websites.</div>
+                </div>
+                <div class="service-card__icon">
+                    <i class="far fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__content">
+                    <h4 class="service-card__title">Quality Matter With Us</h4>
+                    <div class="service-card__meta">Artcore is free HTML5 template by template mo. Credit goes to Unsplash for photos used in this template. You can use this layout for your personal or commercial websites.</div>
+                </div>
+                <div class="service-card__icon">
+                    <i class="far fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__content">
+                    <h4 class="service-card__title">Quality Matter With Us</h4>
+                    <div class="service-card__meta">Artcore is free HTML5 template by template mo. Credit goes to Unsplash for photos used in this template. You can use this layout for your personal or commercial websites.</div>
+                </div>
+                <div class="service-card__icon">
+                    <i class="far fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__content">
+                    <h4 class="service-card__title">Quality Matter With Us</h4>
+                    <div class="service-card__meta">Artcore is free HTML5 template by template mo. Credit goes to Unsplash for photos used in this template. You can use this layout for your personal or commercial websites.</div>
+                </div>
+                <div class="service-card__icon">
+                    <i class="far fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__content">
+                    <h4 class="service-card__title">Quality Matter With Us</h4>
+                    <div class="service-card__meta">Artcore is free HTML5 template by template mo. Credit goes to Unsplash for photos used in this template. You can use this layout for your personal or commercial websites.</div>
+                </div>
+                <div class="service-card__icon">
+                    <i class="far fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__content">
+                    <h4 class="service-card__title">Quality Matter With Us</h4>
+                    <div class="service-card__meta">Artcore is free HTML5 template by template mo. Credit goes to Unsplash for photos used in this template. You can use this layout for your personal or commercial websites.</div>
+                </div>
+                <div class="service-card__icon">
+                    <i class="far fa-lightbulb"></i>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="blog">
+        <h3 class="section-title">and here some images for you...</h3>
+        <div class="blog-cards" id="blog-cards">
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog1.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog2.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog3.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog4.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog5.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog6.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog7.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog8.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card__image">
+                    <img src="./img/blog9.png" alt="">
+                    <div class="blog-card__image-overlay">
+                        <div class="blog-card__image-btn"><i class="fa fa-link"></i></div>
+                    </div>
+                </div>
+                <div class="blog-card__content">
+                    <h4 class="blog-card__title">Keep Your Stuff Alive</h4>
+                    <div class="blog-card__date">24 November by Theme</div>
+                    <div class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, optio.</div>
+                </div>
+            </div>
+        </div>
+        <div class="blog-pagination">
+            <div class="icon-btn" id="prevPage"><i class="fas fa-chevron-left"></i></div>
+            <div class="blog-pagination__text" id="pageText">Page 1</div>
+            <div class="icon-btn" id="nextPage"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </section>
+    <section class="contact-us">
+        <h3 class="section-title">contact us</h3>
+        <div class="contact-block">
+            <p class="contact-block__text">This is an example of a contact page. You can set the contact page in your themes backend and add, remove and modify the input fields, text areas, dropdowns and checkboxes from your backend as well.</p>
+            <h4 class="contact-block__title">Send Us Email</h4>
+            <form action="" class="contact-form">
+                <div class="contact-form__field">
+                    <label for="name">Your name:</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="contact-form__field">
+                    <label for="email">Email Address:</label>
+                    <input type="text" id="email">
+                </div>
+                <div class="contact-form__field">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone">
+                </div>
+                <div class="contact-form__field">
+                    <label for="message">Your Message:</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <div class="contact-form__field">
+                    <label></label>
+                    <input type="submit" class="contact-form__button" value="Send message">
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+<script src="utils/dropdown-menu/dropdown-menu.js"></script>
+<script src="js/index.js"></script>
+</html>

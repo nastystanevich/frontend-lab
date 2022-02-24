@@ -1,0 +1,29 @@
+.dropdown-menu-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    min-width: 10vw;
+    width: max-content;
+
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+}
+
+.dropdown-menu__item {
+    padding: 8px;
+}
+
+.dropdown-menu__item:not(:last-child) {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.dropdown-menu-wrapper > div {
+    background: #fff;
+}
+
+.dropdown-menu {
+    background: #fff;
+    width: 100%;
+}
