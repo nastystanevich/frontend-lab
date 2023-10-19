@@ -1,0 +1,678 @@
+html {
+    font-family: "Roboto Lab", serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+body {
+    font-size: 1rem;
+    background-color: #efefef;
+}
+
+.section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-top {
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto;
+}
+
+.container-small {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.social,
+.header-bottom__grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.header-bottom__grid {
+    padding: 30px 0;
+}
+
+.title {
+    font-family: "Roboto Lab", serif;
+    font-size: 2.057rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.social .title {
+    cursor: pointer;
+}
+
+.color-orange {
+    color: #ffa500;
+}
+
+.color-green {
+    color: #adff2f;
+}
+
+.color-blue {
+    color: #00bfff;
+}
+
+.social__content {
+    overflow: hidden;
+}
+
+.media,
+.nav__buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: -2px;
+}
+
+.item {
+    padding: 2px;
+}
+
+.btn {
+    font-size: 0.877rem;
+    line-height: 2.932;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d0d0d0;
+    transition: all 0.5s ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    border-color: #000000;
+}
+
+.btn#menu-button {
+    display: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 -30px;
+    text-transform: uppercase;
+}
+
+.menu__item {
+    position: relative;
+    padding: 0 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.menu__item:not(:last-child)::after {
+    content: '/';
+    position: absolute;
+    color: #d0d0d0;
+    margin-left: 30px;
+}
+
+.submenu {
+    position: absolute;
+    top: 40px;
+    left: -30px;
+    width: 200px;
+    background-color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.submenu:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -20px;
+    left: 80px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+.menu__item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu__item {
+    padding: 10px;
+    border-bottom: 1px solid #d0d0d0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.submenu__item:hover {
+    color: #ffa500;
+}
+
+.menu__link {
+    transition: all 0.5s ease;
+}
+
+.menu__link:hover {
+    color: #ffa500;
+}
+
+.burger {
+    max-height: 850px;
+    overflow: hidden;
+    background-color: #2c2c2c;
+    transition: max-height 0.5s ease-out;
+}
+
+.close-burger {
+    max-height: 0;
+}
+
+.burger__nav li {
+    font-size: 1.25rem;
+    color: #ffffff;
+    padding: 15px 0;
+}
+
+.burger__nav li:first-child {
+    padding-top: 25px;
+}
+
+.burger__nav li:last-child {
+    padding-bottom: 25px;
+}
+
+.burger__nav li:not(:first-child) {
+    border-top: 1px solid #474747;
+}
+
+.burger__sublist {
+    margin: 0 25px 0 50px;
+}
+
+/*INTRO*/
+
+.intro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("../images/first.jpg");
+    background-size: cover;
+    background-position-y: 85%;
+    padding-left: 138px;
+    height: 500px;
+}
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #ffffff;
+}
+
+.intro .title {
+    font-size: 2.057rem;
+}
+
+.intro__text {
+    font-size: 1.646rem;
+    font-family: "Roboto Lab", sans-serif;
+}
+
+.intro .title,
+.intro__text {
+    margin-bottom: 35px;
+}
+
+.services .title,
+.blogs .title,
+.contacts .title {
+    font-size: 1.71rem;
+    font-weight: normal;
+    padding: 70px 0;
+}
+
+.unsplash {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.services__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 30px;
+    width: 555px;
+    background-color: #ffffff;
+    text-align: right;
+}
+
+.service:nth-child(even) {
+    text-align: left;
+    flex-direction: row-reverse;
+}
+
+.service__content {
+    width: 395px;
+}
+
+.service__title {
+    margin-bottom: 25px;
+    font-weight: normal;
+    font-size: 1.285rem;
+}
+
+.service__text {
+    font-family: "Roboto Lab", sans-serif;
+    font-size: 1rem;
+    color: #778899;
+    line-height: 1.5em;
+}
+
+.service__icon {
+    border: 2px solid #e4e4e4;
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+    font-size: 2.06rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service__icon:hover {
+    border-color: #ffa500;
+    color: #ffa500;
+    transform: rotate(360deg);
+    transition-duration: 0.4s;
+}
+
+
+/*BLOGS*/
+
+.blogs__wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: stretch;
+    align-content: space-between;
+    max-height: 1700px;
+}
+
+.blogs__item {
+    width: 360px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    transition: all 0.5s linear;
+}
+
+.blogs__image {
+    position: relative;
+}
+
+.blogs__image-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: opacity 0.3s, visibility 0.3s ease-out;
+}
+
+.image-btn {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+
+.image-btn:hover,
+.image-btn:hover .fas {
+    border-color: #ffa500;
+    color: #ffa500;
+}
+
+.image-btn .fas{
+    color: #ffffff;
+}
+
+.blogs__image:hover .blogs__image-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blogs__content {
+    font-family: "Roboto Lab", sans-serif;
+    padding: 25px;
+}
+
+.blogs__title {
+    font-family: "Roboto Lab", serif;
+    font-size: 1.285rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.blogs__title:hover {
+    color: #ffa500;
+    cursor: pointer;
+}
+
+.blogs__data {
+    font-size: 0.914rem;
+    margin-bottom: 10px;
+    color: #778899;
+}
+
+.blogs__text {
+    color: #778899;
+    line-height: 1.5;
+}
+
+.unsplash-link:hover {
+    color: #000000;
+}
+
+
+/*CONTACTS*/
+
+.form {
+    background-color: #ffffff;
+    padding: 22px;
+    margin-bottom: 100px;
+}
+
+.form__content {
+    width: 540px;
+}
+
+.form__text {
+    font-family: "Roboto Lab", sans-serif;
+    margin-bottom: 20px;
+    color: #778899;
+}
+
+.form__row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.form__label {
+    font-family: "Roboto Lab", sans-serif;
+    font-weight: 400;
+}
+
+.form__title {
+    font-family: "Roboto Lab", serif;
+    font-size: 1.285rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.form__label {
+    width: 150px;
+    color: #778899;
+}
+
+.form__text,
+.form__label {
+    line-height: 1.5;
+}
+
+.form__input,
+.form__message {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #d0d0d0;
+}
+
+.form__message {
+    width: 380px;
+    max-width: 380px;
+    height: 120px;
+    min-height: 120px;
+}
+
+.form__button {
+    margin-left: 150px;
+    width: 250px;
+    background-color: #ffffff;
+    font-family: "Roboto Lab", sans-serif;
+    font-size: 1rem;
+    line-height: 2.571;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form__button:hover {
+    border-color: #ffa500;
+    color: #ffa500;
+}
+
+/*POPUP*/
+
+.popup {
+    transform: translateY(-100%);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: 1s ease;
+}
+
+.popup__close {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.popup__text {
+    position: relative;
+    top: 300px;
+    left: 0;
+    width: 100%;
+    font-size: 5.71rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.active {
+    transform: translateY(0);
+}
+
+/*MEDIA*/
+
+@media screen and (max-width: 1200px){
+    .container-small {
+        max-width: 1000px;
+    }
+
+    .service {
+        width: 455px;
+    }
+
+    .service__content {
+        width: 295px;
+    }
+
+    .blogs__item {
+        width: 290px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .container-small {
+        max-width: 750px;
+        padding: 0 15px;
+    }
+
+    .social,
+    .header-bottom__grid {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .btn#menu-button {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service__content {
+        width: 555px;
+    }
+
+    .blogs__wrapper {
+        max-height: 2500px;
+    }
+
+    .blogs__item {
+        width: 345px;
+    }
+
+    #blog-first {
+        order: 1;
+    }
+
+    #blog-second {
+        order: 8;
+    }
+
+    #blog-third {
+        order: 4;
+    }
+
+    #blog-fourth {
+        order: 6;
+    }
+
+    #blog-fifth {
+        order: 2;
+    }
+
+    #blog-sixth {
+        order: 9;
+    }
+
+    #blog-seventh {
+        order: 7;
+    }
+
+    #blog-eighth {
+        order: 3;
+    }
+
+    #blog-ninth {
+        order: 5;
+    }
+
+    .form__content {
+        width: 100%;
+        padding-bottom: 50%;
+    }
+
+    .form__input,
+    .form__message,
+    .form__button {
+        width: 400px;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .social {
+        flex-direction: column;
+        padding: 30px 0 20px;
+    }
+
+    .social__content {
+        margin-top: 30px;
+    }
+
+    .intro {
+        padding-left: 10%;
+    }
+    .container-small {
+        padding: 0 15px;
+    }
+
+    .service,
+    .service:nth-child(even) {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .service__content {
+        width: 100%;
+    }
+
+    .service__icon {
+        margin: 20px 0;
+    }
+
+    .blogs__wrapper {
+        max-height: 100%;
+    }
+
+    .blogs__item {
+        width: 100%;
+    }
+
+    .form__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form__button {
+        margin-left: 0;
+    }
+
+    .form__input, .form__message, .form__button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
