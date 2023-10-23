@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     popupDisplay();
     showBurger();
-    // getData();
-    // createPagination();
+    createPagination();
 });
 
 function popupDisplay() {
@@ -34,21 +33,21 @@ function showBurger() {
 }
 
 async function getData() {
-    const dataApi = 'https://api.giphy.com/v1/gifs/search?api_key=hTfMt4wa3iLiabwXTQ1eTaKBiQ51Gr3J&q=cats&limit=27&offset=9';
+    const dataApi = 'https://api.giphy.com/v1/gifs/search?api_key=hTfMt4wa3iLiabwXTQ1eTaKBiQ51Gr3J&q=cats&limit=36&offset=9';
     const response = await fetch(dataApi)
     const data = await response.json();
-    console.log(data);
     return data;
 }
 
 async function createPagination() {
     const postsData = await getData();
+    const cards = 9;
+    let pages = postsData.data.length / cards;
     let currentPage = 1;
-    let cards = 9;
 
-    function initList(arrData, cardsPerPage, page) {
+    function initCards(arrData, cardsPerPage, page) {
         const collectionCards = document.querySelectorAll('.blogs__item');
-        const start = cardsPerPage * page;
+        const start = (page - 1) * cardsPerPage;
         const end = start + cardsPerPage;
         const paginatedData = arrData.data.slice(start, end);
 
@@ -63,13 +62,40 @@ async function createPagination() {
                 dateCard.innerText = el['import_datetime'];
                 linkCard.href = el.url;
         })
+
+        initPagination();
     }
 
-    initList(postsData, cards, currentPage);
-    // function initPagination() {}
-}
+    initCards(postsData, cards, currentPage);
 
-createPagination();
+    function initPagination() {
+        const prevArrow = document.querySelector('.prev');
+        const nextArrow = document.querySelector('.next');
+        //
+        // for (let i = 1; i <= pages; i++) {
+        //     let liBtn = document.createElement('li');
+        //     liBtn.className = 'arrows__item';
+        //     liBtn.innerText = `${i}`;
+        //     nextArrow.before(liBtn);
+        // }
+
+        nextArrow.onclick = () => {
+            currentPage++;
+            initCards(postsData, cards, currentPage);
+        }
+
+        prevArrow.onclick = () => {
+            currentPage--;
+            initCards(postsData, cards, currentPage);
+        }
+
+        if (currentPage > pages) {
+            currentPage = pages;
+        } else if(currentPage < 1) {
+            currentPage = 1;
+        }
+    }
+}
 
 
 
