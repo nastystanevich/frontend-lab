@@ -314,14 +314,18 @@ body {
 /*BLOGS*/
 
 .blogs__wrapper {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: stretch;
-    align-content: space-between;
-    max-height: 1700px;
+    /*display: flex;*/
+    /*flex-flow: column wrap;*/
+    /*!*!*column-count: 3;*!*!*/
+    /*justify-content: stretch;*/
+    /*align-content: space-between;*/
+    /*max-height: 1700px;*/
+    /*max-height: 2100px;*/
+    column-count: 3;
 }
 
 .blogs__item {
+    display: inline-block;
     width: 360px;
     background-color: #ffffff;
     margin-bottom: 30px;
@@ -385,7 +389,7 @@ body {
     cursor: pointer;
 }
 
-.blogs__data {
+.blogs__date {
     font-size: 0.914rem;
     margin-bottom: 10px;
     color: #778899;
@@ -398,6 +402,23 @@ body {
 
 .unsplash-link:hover {
     color: #000000;
+}
+
+.arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.arrows__item {
+    font-size: 2.5rem;
+}
+
+.arrows__item:hover {
+    color: #ffa500;
 }
 
 
@@ -567,48 +588,49 @@ body {
     }
 
     .blogs__wrapper {
-        max-height: 2500px;
+        column-count: 2;
+        /*max-height: 2500px;*/
     }
 
-    .blogs__item {
-        width: 345px;
-    }
+    /*.blogs__item {*/
+    /*    width: 345px;*/
+    /*}*/
 
-    #blog-first {
-        order: 1;
-    }
+    /*#blog-first {*/
+    /*    order: 1;*/
+    /*}*/
 
-    #blog-second {
-        order: 8;
-    }
+    /*#blog-second {*/
+    /*    order: 8;*/
+    /*}*/
 
-    #blog-third {
-        order: 4;
-    }
+    /*#blog-third {*/
+    /*    order: 4;*/
+    /*}*/
 
-    #blog-fourth {
-        order: 6;
-    }
+    /*#blog-fourth {*/
+    /*    order: 6;*/
+    /*}*/
 
-    #blog-fifth {
-        order: 2;
-    }
+    /*#blog-fifth {*/
+    /*    order: 2;*/
+    /*}*/
 
-    #blog-sixth {
-        order: 9;
-    }
+    /*#blog-sixth {*/
+    /*    order: 9;*/
+    /*}*/
 
-    #blog-seventh {
-        order: 7;
-    }
+    /*#blog-seventh {*/
+    /*    order: 7;*/
+    /*}*/
 
-    #blog-eighth {
-        order: 3;
-    }
+    /*#blog-eighth {*/
+    /*    order: 3;*/
+    /*}*/
 
-    #blog-ninth {
-        order: 5;
-    }
+    /*#blog-ninth {*/
+    /*    order: 5;*/
+    /*}*/
 
     .form__content {
         width: 100%;
@@ -655,7 +677,8 @@ body {
     }
 
     .blogs__wrapper {
-        max-height: 100%;
+        column-count: 1;
+        /*max-height: 100%;*/
     }
 
     .blogs__item {
