@@ -38,7 +38,6 @@ async function getData() {
     try {
         const giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=hTfMt4wa3iLiabwXTQ1eTaKBiQ51Gr3J&q=cats&limit=9&offset=${offset}`;
         const response = await fetch(giphyUrl);
-        console.log(offset);
 
         return response.json();
     } catch (err) {
@@ -82,6 +81,8 @@ function initPagination() {
         renderCards();
     }
 }
+
+
 
 
 
