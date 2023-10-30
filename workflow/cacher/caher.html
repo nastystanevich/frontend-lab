@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="caher.css">
+    <link rel="stylesheet" href="/workflow/landing-page/styles/reset.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__content">
+            <a class="icon" href="#">
+                <img src="icon.svg" alt="icon" class="svg">
+            </a>
+            <button class="header__close" type="button"></button>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="section-form">
+        <div class="container">
+            <div class="cacher-form">
+                <form class="form" id="form">
+                    <div class="form__content">
+                        <label class="form__label">
+                            <span class="form__text">Factorial of a number</span>
+                            <input type="text" class="form__input" placeholder="Enter a number to calculate factorial" name="data">
+                        </label>
+                        <label class="form__result">
+                            <span class="form__text">Calculation result:</span>
+                            <textarea class="form__textarea" name="result"></textarea>
+                        </label>
+                        <input id='submit' class="form__submit" type="submit" value="Calculate!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="cacher.js"></script>
+
+</body>
+</html>
