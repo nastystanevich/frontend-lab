@@ -1,22 +1,19 @@
 class Cacher {
-    withCache(func) {
-        function cachingDecorator(func) {
-            let cache = new Map();
+    withCache(methodProcessingData) {
+        function cachingDecorator(methodProcessingData) {
+            const cachedResults = new Map();
             return function(...args) {
                 const key = args.toString();
-                if (cache.has(key)) {
-                    console.log ('вернул из кэша');
-                    return cache.get(key);
+                if (cachedResults.has(key)) {
+                    return cachedResults.get(key);
                 }
 
-                const result = func.call(this, ...args);
-                console.log(result);
-                console.log ('создал новый');
-                cache.set(key, result);
+                const result = methodProcessingData.call(this, ...args);
+                cachedResults.set(key, result);
                 return result;
             };
         }
-        return cachingDecorator(func);
+        return cachingDecorator(methodProcessingData);
     }
 }
 
@@ -34,21 +31,9 @@ function getFactorial (number) {
         return answer;
     }
 }
-// function getPow(a,b) {
-//     return a ** b;
-// }
 
 const cacherFactorial = cacher.withCache(getFactorial);
-// const cacherPow = cacher.withCache(getPow);
 
-// console.log('Factorial of a number "130": ', cacherFactorial(130));
-// console.log('Factorial of a number "140": ', cacherFactorial(140));
-// console.log('Factorial of a number "130": ', cacherFactorial(130));
-// console.log('Factorial of a number "140": ', cacherFactorial(140));
-// console.log('2 to the power of 4: ',cacherPow(2, 4));
-// console.log('2 to the power of 4: ',cacherPow(2, 4));
-// console.log('2 to the power of 3: ',cacherPow(2, 3));
-// console.log('2 to the power of 3: ',cacherPow(2, 3));
 const form = document.getElementById('form');
 
 form.onsubmit = (e) => {
