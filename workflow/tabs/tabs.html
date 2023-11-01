@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="tabs.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+<main>
+    <div class="tabs">
+        <div class="tabs__wrapper">
+            <ul class="tabs__header">
+                <li class="tabs__item tabs__item_active" data-tab="js">JavaScript</li>
+                <li class="tabs__item" data-tab="jquery">Jquery</li>
+                <li class="tabs__item" data-tab="dom">DOM</li>
+                <li class="tabs__item" data-tab="css">CSS</li>
+            </ul>
+            <div class="tabs__body">
+                <div class="tabs__content tabs__content_active"  data-tab="js">
+                    <p class="tabs__text">
+                        JavaScript — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и функциональный стили. Является реализацией спецификации ECMAScript (стандарт ECMA-262).
+                    </p>
+                    <p class="tabs__text">
+                        JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.
+                    </p>
+                </div>
+                <div class="tabs__content"  data-tab="jquery">
+                    <p class="tabs__text">
+                        jQuery — набор функций JavaScript, фокусирующийся на взаимодействии JavaScript и HTML. Библиотека jQuery помогает легко получать доступ к любому элементу DOM, обращаться к атрибутам и содержимому элементов DOM, манипулировать ими. Также библиотека jQuery предоставляет удобный API для работы с AJAX. Разработка jQuery ведётся командой добровольцев на пожертвования.
+                    </p>
+                </div>
+                <div class="tabs__content" data-tab="dom">
+                    <p class="tabs__text">
+                        DOM (от англ. Document Object Model — «объектная модель документа») — это независящий от платформы и языка программный интерфейс, позволяющий программам и скриптам получить доступ к содержимому HTML-, XHTML- и XML-документов, а также изменять содержимое, структуру и оформление таких документов.
+                    </p>
+                    <p class="tabs__text">
+                        Модель DOM не накладывает ограничений на структуру документа. Любой документ известной структуры с помощью DOM может быть представлен в виде дерева узлов, каждый узел которого представляет собой элемент, атрибут, текстовый, графический или любой другой объект. Узлы связаны между собой отношениями «родительский-дочерний».
+                    </p>
+                </div>
+                <div class="tabs__content" data-tab="css">
+                    <p class="tabs__text">
+                        CSS (Cascading Style Sheets «каскадные таблицы стилей») — формальный язык декорирования и описания внешнего вида документа (веб-страницы), написанного с использованием языка разметки (чаще всего HTML или XHTML). Также может применяться к любым XML-документам, например, к SVG или XUL.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="tabs.js"></script>
+</body>
+</html>
