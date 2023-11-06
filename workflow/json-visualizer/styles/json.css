@@ -144,7 +144,6 @@ body {
 
 .button.button_black::before,
 .button.button_black > .button__name,
-/*.button__name.button__name_black,*/
 .button_black {
     color: #050505;
 }
@@ -157,4 +156,15 @@ body {
     color: #aaaaaa;
 }
 
+.json__content {
+    margin-left: 26px;
+}
+
+.json__simple {
+    margin-left: 8px;
+}
+
+.button__tag {
+    margin-left: 4px;
+}
 /*\27A4*/

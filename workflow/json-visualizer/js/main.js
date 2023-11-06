@@ -6,60 +6,76 @@ const outputArea = document.querySelector('.json__field_output');
 const buttonFormat = document.querySelector('.button__submit');
 
 function createObjectComponent (json) {
+    const arraysObject = Object.entries(json);
     const elementBox = document.createElement('ul');
+    elementBox.classList.add('json__content');
 
-    for (let [key, value] of Object.entries(json)) {
-        const elementBoxItem = document.createElement('li');
-        const elementWithButtonName = document.createElement('span');
-
-        elementBoxItem.classList.add()
-
-        elementWithButtonName.classList.add('button__name', 'button__name_black');
-        elementWithButtonName.innerText = `${key}:`;
-
-        elementBoxItem.style.marginLeft = '26px';
-        elementBoxItem.append(elementWithButtonName);
-
+    arraysObject.forEach(([key, value]) => {
+        const elementBoxItem = crateElementBoxItem (key);
         elementBox.append(elementBoxItem);
 
-        const buttonTag = document.createElement('span');
-
-        switch (true) {
-            case value === null:
-                value = 'null';
-                break;
-            case Array.isArray(value):
-                buttonTag.innerText = objectMarking;
-                break;
-            case typeof value === 'object':
-                buttonTag.innerText = arrayMarking;
-                break;
+        if (value === null) {
+            value = 'null';
         }
 
-        switch (true) {
-            case Array.isArray(value):
-            case typeof value === 'object':
-                buttonTag.classList.add('button__tag');
-                buttonTag.style.marginLeft = '4px';
+        const buttonTagWrapper = createButtonTag(value);
 
-                elementBoxItem.classList.add('button');
-                elementBoxItem.append(buttonTag);
-
-                elementBoxItem.appendChild(createObjectComponent(value));
-                break;
-            default:
-                elementBoxItem.appendChild(createSimpleComponent(value));
-        }
-    }
+        addContentDependingOnType(value, elementBoxItem, buttonTagWrapper);
+    })
 
     return elementBox;
 }
 
+function addContentDependingOnType(value, elementBoxItem, buttonTagWrapper) {
+    if (Array.isArray(value) || typeof value === 'object') {
+        const objectComponent = createObjectComponent(value);
+        elementBoxItem.classList.add('button');
+        elementBoxItem.append(buttonTagWrapper);
+        elementBoxItem.appendChild(objectComponent);
+
+        elementBoxItem.onclick = addOnclickInButton(elementBoxItem);
+    } else {
+        const simpleComponent = createSimpleComponent(value);
+        elementBoxItem.appendChild(simpleComponent);
+    }
+}
+
+function crateElementBoxItem (key) {
+    const elementBoxItem = document.createElement('li');
+    const elementWithButtonName = document.createElement('span');
+
+    elementWithButtonName.classList.add('button__name', 'button__name_black');
+    elementWithButtonName.innerText = `${key}:`;
+
+    elementBoxItem.append(elementWithButtonName);
+
+    return elementBoxItem;
+}
+
+function createButtonTag (value) {
+    const buttonTag = document.createElement('span');
+    buttonTag.classList.add('button__tag');
+
+    if (Array.isArray(value)) {
+        buttonTag.innerText = arrayMarking;
+    } else if (typeof value === 'object') {
+        buttonTag.innerText = objectMarking;
+    }
+
+    return buttonTag;
+}
+
+function addOnclickInButton (button) {
+    return (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        button.classList.toggle('active');
+    }
+}
+
 function createSimpleComponent (value) {
     const simpleComponent = document.createElement('span');
-
     simpleComponent.classList.add('json__simple');
-    simpleComponent.style.marginLeft = '8px';
 
     switch (true) {
         case value === "null":
@@ -89,27 +105,10 @@ buttonFormat.onclick = () => {
             wrapperInputArea.classList.remove('active');
         }
 
-        const buttonJsonObject = document.createElement('div');
-        buttonJsonObject.classList.add('button', 'button_black');
+        const buttonWrapperObjectComponent = createObjectComponent(jsonToObject);
+        const mainComponentObject = createTheMainComponentOfTheObject();
 
-        const buttonJsonObjectName = document.createElement('span');
-        buttonJsonObjectName.classList.add('button__name');
-        buttonJsonObjectName.innerText = `Big Object ${objectMarking}`;
-        buttonJsonObject.append(buttonJsonObjectName);
-
-        outputArea.append(buttonJsonObject);
-
-        buttonJsonObject.append(createObjectComponent(jsonToObject));
-        const buttonsCollection = document.querySelectorAll('.button');
-
-        for(let button of buttonsCollection) {
-            button.onclick = (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                const elem = event.target.closest('.button');
-                elem.classList.toggle('active');
-            }
-        }
+        mainComponentObject.append(buttonWrapperObjectComponent);
     } catch (e) {
         const errorComponent = document.querySelector('.json__error');
 
@@ -118,6 +117,29 @@ buttonFormat.onclick = () => {
     }
 }
 
+function createTheMainComponentOfTheObject ()  {
+    const buttonJsonObject = document.createElement('div');
+    buttonJsonObject.classList.add('button', 'button_black');
+    buttonJsonObject.onclick = addOnclickInButton(buttonJsonObject);
+
+    const buttonJsonObjectName = document.createElement('span');
+    buttonJsonObjectName.classList.add('button__name');
+    buttonJsonObjectName.innerText = `Big Object ${objectMarking}`;
+
+    buttonJsonObject.append(buttonJsonObjectName);
+
+    outputArea.append(buttonJsonObject);
+
+    return buttonJsonObject;
+}
+
+console.log(JSON.stringify({
+    "name": "John",
+    "age": 30,
+    "isAdmin": false,
+    "courses": ["html", "css", "js"],
+    "wife": null
+}))
 
 
 
