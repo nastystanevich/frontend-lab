@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Visualizer</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/json.css">
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <div class="container">
+        <div class="json__wrapper">
+            <div class="json__item">
+                <label class="json__header" for="textarea">
+                    <span class="json__title" id="title">JSON String</span>
+                </label>
+                <textarea class="json__field json__field_input" name="textarea" id="textarea"
+                          placeholder="Enter you JSON here..."></textarea>
+                <span class="json__error"></span>
+            </div>
+            <div class="json__controls">
+                <button type="button" class="json__button button__submit">Build Tree</button>
+            </div>
+            <div class="json__item">
+                <h2 class="json__header">JSON Tree</h2>
+                <div class="json__field json__field_output" id="app">
+                    <p class="json__text">You JSON will appear here...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

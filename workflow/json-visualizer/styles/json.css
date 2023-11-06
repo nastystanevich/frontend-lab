@@ -1,0 +1,160 @@
+body {
+    background-color: #333333;
+    font-size: 16px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 50px;
+}
+
+.json__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+}
+
+.json__item {
+    height: 100%;
+    width: 40%;
+}
+
+.json__header {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 6%;
+    background-color: #444444;
+    border-top-right-radius: 32px;
+    border-top-left-radius: 32px;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-weight: bold;
+    color: #646464;
+    text-align: center;
+    padding: 4px;
+}
+
+.json__header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 2%;
+    height: 1px;
+    width: 96%;
+    background-color: #646464;
+}
+
+.json__item.active #title {
+    color: #c03e3e;
+}
+
+.json__error {
+    display: none;
+}
+
+.json__item.active .json__error {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 76px;
+    bottom: 76px;
+    left: 0;
+    padding: 8px;
+    text-transform: uppercase;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #ffffff;
+    background-color: #c03e3e;
+    text-align: center;
+}
+
+.json__item.active .json__error::before {
+    content: '\26A0';
+    margin-right: 10px;
+}
+
+.json__field {
+    width: 100%;
+    height: 94%;
+    padding: 30px;
+    color: #aaaaaa;
+    border: none;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    background-color: #444444;
+    resize: none;
+    overflow-y: auto;
+    word-wrap: break-word;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.json__field:focus,
+.json__field:hover {
+    border-top: none;
+    border-left: 1px solid #aba8a8;
+    border-bottom: 1px solid #aba8a8;
+    border-right: 1px solid #aba8a8;
+    background-color: #4a4a4a;
+}
+
+.json__field:focus {
+    color: #eeeeee;
+}
+
+.json__control {
+    width: 20%;
+}
+
+.json__button {
+    width: 100%;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background-color: #009567;
+    color: #eeeeee;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.button {
+    cursor: pointer;
+}
+
+.button::before {
+    content: "▼";
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 4px;
+}
+
+.button.active > ul {
+    display: none;
+}
+
+.button.active::before,
+.button.button_black.active::before{
+    transform: rotate(-90deg);
+}
+
+.button.button_black::before,
+.button.button_black > .button__name,
+/*.button__name.button__name_black,*/
+.button_black {
+    color: #050505;
+}
+
+.button__tag {
+    color: #050505;
+}
+
+.button__name {
+    color: #aaaaaa;
+}
+
+/*\27A4*/
