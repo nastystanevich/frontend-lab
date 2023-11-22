@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+/*a:hover {*/
+/*   color: inherit;*/
+/*}*/
+
+a:not(:disabled) {
+   cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+th {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+input,
+textarea {
+  appearance: none;
+  background-color: transparent;
+}
+
+input[type='number'] {
+  appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+svg {
+  fill: none;
+}
